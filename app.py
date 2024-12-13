@@ -57,7 +57,7 @@ if uploaded_file is not None:
 
     # Input for user to predict the review count for a specific year
     st.subheader('Predict Review Count for a Specific Year')
-    if model:
+    if 'model' in locals():  # Check if model is defined
         user_input_year = st.number_input('Enter a year to predict the review count:', min_value=int(yearly_count['Year'].min()), max_value=int(yearly_count['Year'].max() + 10), value=int(yearly_count['Year'].max() + 1))
         user_input = np.array([[user_input_year]])
         predicted_review_count = model.predict(user_input)
