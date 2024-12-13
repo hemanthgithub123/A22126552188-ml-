@@ -7,8 +7,11 @@ import os
 
 st.title('Faculty Achievements: Year-wise Review Analysis')
 
-# Load the dataset from the same directory as app.py
-review_ip = pd.read_csv('iphone.csv')
+# URL to the raw CSV file on GitHub
+csv_url = 'https://raw.github.com/username/repository/branch/iphone.csv'
+
+# Load the dataset from GitHub
+review_ip = pd.read_csv(csv_url)
 
 # Convert string to datetime
 review_ip['date'] = pd.to_datetime(review_ip['date'], dayfirst=True)  # Assuming day-month-year format
