@@ -6,7 +6,7 @@ import numpy as np
 import os
 
 # Load the dataset
-review_ip = pd.read_csv(r'C:/Users/DELL/ml/iphone.csv')
+review_ip = pd.read_csv('iphone.csv')
 
 # Convert string to datetime
 review_ip['date'] = pd.to_datetime(review_ip['date'], dayfirst=True)  # Assuming day-month-year format
