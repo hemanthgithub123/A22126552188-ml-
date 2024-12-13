@@ -5,7 +5,7 @@ import joblib
 import numpy as np
 import os
 
-st.title('Faculty Achievements: Year-wise Review Analysis')
+st.title('IPHONE: Year-wise Review Analysis')
 
 # File uploader for CSV file
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
