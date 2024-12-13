@@ -8,7 +8,7 @@ import os
 st.title('Faculty Achievements: Year-wise Review Analysis')
 
 # URL to the raw CSV file on GitHub
-csv_url = 'https://raw.github.com/username/repository/branch/iphone.csv'
+csv_url = 'https://github.com/hemanthgithub123/A22126552188-ml-/iphone.csv'
 
 # Load the dataset from GitHub
 review_ip = pd.read_csv(csv_url)
