@@ -5,7 +5,9 @@ import joblib
 import numpy as np
 import os
 
-# Load the dataset
+st.title('Faculty Achievements: Year-wise Review Analysis')
+
+# Load the dataset from the same directory as app.py
 review_ip = pd.read_csv('iphone.csv')
 
 # Convert string to datetime
@@ -19,11 +21,8 @@ review_ip['month'] = review_ip['date'].dt.month
 yearly_count = review_ip.groupby('year')['reviewTitle'].count().reset_index()
 yearly_count.columns = ['Year', 'Review Count']
 
-# Absolute path to the trained model file
-joblib_file = "C:/Users/DELL/ml/random_forest_model.pkl"
-
-# Initialize the model variable
-model = None
+# Path to the trained model file
+joblib_file = "random_forest_model.pkl"
 
 # Check if the model file exists before loading
 if os.path.exists(joblib_file):
@@ -31,8 +30,6 @@ if os.path.exists(joblib_file):
     st.write("Model loaded successfully.")
 else:
     st.write(f"File {joblib_file} not found. Please check the path.")
-
-st.title('Faculty Achievements: Year-wise Review Analysis')
 
 # Line chart for yearly review count
 st.subheader('Year-wise Count of Reviews (Line Chart)')
